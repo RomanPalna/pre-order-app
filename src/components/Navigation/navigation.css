@@ -1,0 +1,34 @@
+.header {
+    width: 1180px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.header_nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+
+}
+
+.link {
+text-decoration: none;
+font-size: large;
+color: black;
+}
+
+.active {
+    position: relative;
+    color: blue;
+}
+
+.active::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: blue;
+    bottom: -2px;
+}
