@@ -5,7 +5,7 @@ export default function Navigation() {
   return (
     <header className="header">
       <nav className="header_nav">
-        <NavLink exact to="/" className="link">
+        <NavLink exact="true" to="/" className="link">
           Main
         </NavLink>
 
