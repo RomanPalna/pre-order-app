@@ -15,21 +15,53 @@ export default function PriceList({ param }) {
 
   console.log(quantity);
   return (
-    <li>
-      <p>{param.name}</p>
-      <p>{param.liters} л.</p>
-      <p>{param.price} грн.</p>
-      <form onSubmit={handleSubmit}>
-        <input
-          name="Quantity"
-          type="number"
-          value={quantity}
-          onChange={handleChange}
-        ></input>
-        <button type="submit">
-          <AddButton width="24" height="24" />
-        </button>
-      </form>
-    </li>
+    <tr>
+      <th scope="row">{param.name}</th>
+      <td>{param.liters} л.</td>
+      <td>{param.price} грн.</td>
+      <td>
+        <form className="price_item--form" onSubmit={handleSubmit}>
+          <input
+            className="price_input"
+            name="Quantity"
+            type="number"
+            value={quantity}
+            onChange={handleChange}
+          ></input>
+          <button className="price_item--button" type="submit">
+            <AddButton width="24" height="24" />
+          </button>
+        </form>
+      </td>
+    </tr>
   );
 }
+
+//  <li className="price_item">
+
+/* <p>{param.name}</p> */
+
+/* <p>{param.liters} л.</p> */
+
+/* <p className="price_item--name">{param.price} грн.</p> */
+
+/* <form className="price_item--form" onSubmit={handleSubmit}> */
+
+/* <input */
+
+// className="price_input"
+// name="Quantity"
+// type="number"
+// value={quantity}
+// onChange={handleChange}
+// ></input>
+
+/* <button className="price_item--button" type="submit"> */
+
+/* <AddButton width="24" height="24" /> */
+
+/* </button> */
+
+/* </form> */
+
+/* </li> */
