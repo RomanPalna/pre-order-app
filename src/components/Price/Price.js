@@ -1,27 +1,13 @@
 import list from "../../bottles.json";
 import PriceList from "./PriceList/PriceList";
+import PriceHeader from "./PriceList/PriceHeader";
 import "./price.css";
 
 export default function Price() {
   return (
     <div className="price">
       <table>
-        <caption className="price_dicription">
-          Виберіть позицію зі списка, введіть кількість та тисніть "Додати в
-          замовлення" - "+"
-        </caption>
-
-        <thead>
-          <tr>
-            <th scope="col">Назва</th>
-            <th scope="col">Об'єм</th>
-            <th scope="col">Ціна</th>
-            <th scope="col" className="price_quantity">
-              Кількість
-            </th>
-          </tr>
-        </thead>
-
+        <PriceHeader />
         <tbody>
           {list.map((bottle) => (
             <PriceList key={bottle.id} param={bottle} />
