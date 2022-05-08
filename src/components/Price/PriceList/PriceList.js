@@ -16,7 +16,9 @@ export default function PriceList({ param }) {
   console.log(quantity);
   return (
     <tr>
-      <th scope="row">{param.name}</th>
+      <th scope="row" className="price_name">
+        {param.name}
+      </th>
       <td>{param.liters} л.</td>
       <td>{param.price} грн.</td>
       <td>

@@ -84,3 +84,15 @@ tbody {
 th {
     text-align: center;
 }
+
+.price_dicription {
+    margin: 20px 0;
+}
+
+.price_quantity {
+    text-align: right;
+}
+
+.price_name {
+    text-align: left;
+}
