@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation/Navigation";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import Clock from "./components/Main/Main";
 import Price from "./components/Price/Price";
+import Order from "./components/Order/Order";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Clock />} />
         <Route path="/price" element={<Price />} />
-        <Route path="/order" element={<div>Заглушка Order</div>} />
+        <Route path="/order" element={<Order />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <ToastContainer />
