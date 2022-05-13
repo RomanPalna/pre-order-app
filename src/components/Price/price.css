@@ -96,3 +96,8 @@ th {
 .price_name {
     text-align: left;
 }
+
+.price_settings {
+    display: flex;
+    justify-content: space-between;
+}

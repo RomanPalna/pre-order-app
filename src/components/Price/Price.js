@@ -23,8 +23,10 @@ export default function Price() {
 
   return (
     <div className="price">
-      <Finder value={filter} finder={handleChangeFinder} />
-      <Markup />
+      <div className="price_settings">
+        <Finder value={filter} finder={handleChangeFinder} />
+        <Markup />
+      </div>
       <table>
         <PriceHeader />
 

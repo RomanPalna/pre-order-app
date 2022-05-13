@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import "./markup.css";
 
 export default function Markup() {
   const [percent, setPercent] = useState("");
@@ -14,11 +15,14 @@ export default function Markup() {
   const handleChange = (e) => setPercent(e.target.value);
 
   return (
-    <div>
-      <p>Введіть процент націнки</p>
-      <form onSubmit={handleSubmit}>
-        <input type="number" value={percent} onChange={handleChange} />
-      </form>
-    </div>
+    <form className="price_markup" onSubmit={handleSubmit}>
+      <span className="price_markup--text">Введіть процент націнки</span>
+      <input
+        className="price_markup--input"
+        type="number"
+        value={percent}
+        onChange={handleChange}
+      />
+    </form>
   );
 }
