@@ -1,15 +1,32 @@
+import { useState } from "react";
 import list from "../../bottles.json";
 import PriceList from "./PriceList/PriceList";
 import PriceHeader from "./PriceList/PriceHeader";
+import Finder from "./Finder/Finder";
 import "./price.css";
 
 export default function Price() {
+  const [filter, setFilter] = useState("");
+
+  const handleChangeFinder = (e) => setFilter(e.currentTarget.value);
+
+  const showBottle = () => {
+    const normalizeName = filter.toLowerCase();
+
+    return list
+      ? list.filter((bottle) =>
+          bottle.name.toLowerCase().includes(normalizeName)
+        )
+      : console.log("Loading");
+  };
+
   return (
     <div className="price">
+      <Finder value={filter} finder={handleChangeFinder} />
       <table>
         <PriceHeader />
         <tbody>
-          {list.map((bottle) => (
+          {showBottle().map((bottle) => (
             <PriceList key={bottle.id} param={bottle} />
           ))}
         </tbody>

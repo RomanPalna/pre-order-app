@@ -13,7 +13,6 @@ export default function PriceList({ param }) {
     setQuantity(e.currentTarget.value);
   };
 
-  console.log(quantity);
   return (
     <tr>
       <th scope="row" className="price_name">
