@@ -3,6 +3,8 @@ import Navigation from "./components/Navigation/Navigation";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import Clock from "./components/Main/Main";
 import Price from "./components/Price/Price";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <Route path="/order" element={<div>Заглушка Order</div>} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <ToastContainer />
     </>
   );
 }

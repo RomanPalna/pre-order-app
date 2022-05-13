@@ -3,6 +3,7 @@ import list from "../../bottles.json";
 import PriceList from "./PriceList/PriceList";
 import PriceHeader from "./PriceList/PriceHeader";
 import Finder from "./Finder/Finder";
+import Markup from "./Markup/Markup";
 import "./price.css";
 
 export default function Price() {
@@ -23,8 +24,10 @@ export default function Price() {
   return (
     <div className="price">
       <Finder value={filter} finder={handleChangeFinder} />
+      <Markup />
       <table>
         <PriceHeader />
+
         <tbody>
           {showBottle().map((bottle) => (
             <PriceList key={bottle.id} param={bottle} />

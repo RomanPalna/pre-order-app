@@ -1,9 +1,12 @@
+import AddButton from "../../../images/add-button.svg";
+
 export default function PriceHeader() {
   return (
     <>
       <caption className="price_dicription">
-        Виберіть позицію зі списка, введіть кількість та тисніть "Додати в
-        замовлення" - "+"
+        Виберіть позицію зі списка, введіть кількість та тисніть{" "}
+        <img src={AddButton} width="24" height="24" />
+        <p>Для зручності користуйтеся пошуком.</p>
       </caption>
 
       <thead>
