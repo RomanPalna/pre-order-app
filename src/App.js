@@ -6,11 +6,13 @@ import Price from "./components/Price/Price";
 import Order from "./components/Order/Order";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useSelector } from "react-redux";
 
 function App() {
+  const wellcome = useSelector((state) => state.wellcome.wellcome);
   return (
     <>
-      <Navigation />
+      {wellcome ? <Navigation /> : <></>}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/price" element={<Price />} />

@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { getWellcome } from "../../redux/wellcome/wellcome-action";
 
 export default function EnterButton() {
-  const [wellcome, setWellcome] = useState(false);
+  const [wellcome, setWellcome] = useState(true);
   const dispatch = useDispatch();
 
   const comeToApp = () => {
