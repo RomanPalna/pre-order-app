@@ -5,7 +5,7 @@ export default function PriceHeader() {
     <>
       <caption className="price_dicription">
         Виберіть позицію зі списка, введіть кількість та тисніть{" "}
-        <img src={AddButton} width="24" height="24" />
+        <img alt="add button" src={AddButton} width="24" height="24" />
         <p>Для зручності користуйтеся пошуком.</p>
       </caption>
 

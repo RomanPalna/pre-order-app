@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
-import Clock from "./components/Main/Main";
+import MainPage from "./components/Main/Main";
 import Price from "./components/Price/Price";
 import Order from "./components/Order/Order";
 import { ToastContainer } from "react-toastify";
@@ -12,7 +12,7 @@ function App() {
     <>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Clock />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/price" element={<Price />} />
         <Route path="/order" element={<Order />} />
         <Route path="*" element={<PageNotFound />} />
