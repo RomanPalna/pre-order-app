@@ -13,6 +13,7 @@ function App() {
   return (
     <>
       {wellcome ? <NavigationBar /> : <></>}
+
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/price" element={<Price />} />

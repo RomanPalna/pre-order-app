@@ -13,7 +13,7 @@ export default function EnterButton() {
 
   return (
     <div className="wellcome">
-      <p>Підтвердіть свій вік</p>
+      <p className="wellcome_text">Підтвердіть свій вік</p>
       <button className="welcome_button" onClick={comeToApp}>
         Мені виповнилося 18 років
       </button>
