@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Navigation from "./components/Navigation/Navigation";
+import NavigationBar from "./components/NavigationBar/NavigationBar";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import MainPage from "./components/Main/Main";
 import Price from "./components/Price/Price";
@@ -12,7 +12,7 @@ function App() {
   const wellcome = useSelector((state) => state.wellcome.wellcome);
   return (
     <>
-      {wellcome ? <Navigation /> : <></>}
+      {wellcome ? <NavigationBar /> : <></>}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/price" element={<Price />} />
