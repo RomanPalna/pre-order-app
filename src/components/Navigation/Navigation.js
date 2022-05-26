@@ -9,9 +9,11 @@ export default function Navigation() {
     setMenuActive(!menuActive);
   };
 
-  let classname = "hamburger";
+  let buttonMenu = "hamburger";
+  let mainMenu = "menu";
   if (menuActive) {
-    classname += " active";
+    buttonMenu += " active";
+    mainMenu += " active";
   }
 
   return (
@@ -20,35 +22,31 @@ export default function Navigation() {
         LOGO
       </Link>
 
-      <button type="button" className={classname} onClick={handleClick}>
+      <button type="button" className={buttonMenu} onClick={handleClick}>
         <span className="line"></span>
         <span className="line"></span>
         <span className="line"></span>
       </button>
 
-      {menuActive ? (
-        <div className="menu">
-          <ul className="list">
-            <li>
-              <NavLink exact="true" to="/" className="link">
-                Головна
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/price" className="link">
-                Алкогольна карта
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/order" className="link">
-                Коктейлі
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      ) : (
-        <></>
-      )}
+      <div className={mainMenu}>
+        <ul className="list">
+          <li>
+            <NavLink exact="true" to="/" className="link">
+              Головна
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/price" className="link">
+              Алкогольна карта
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/order" className="link">
+              Коктейлі
+            </NavLink>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }
