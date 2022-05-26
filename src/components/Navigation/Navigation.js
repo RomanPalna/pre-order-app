@@ -1,22 +1,54 @@
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 import "./navigation.css";
 
 export default function Navigation() {
+  const [menuActive, setMenuActive] = useState(false);
+
+  const handleClick = () => {
+    setMenuActive(!menuActive);
+  };
+
+  let classname = "hamburger";
+  if (menuActive) {
+    classname += " active";
+  }
+
   return (
-    <header className="header">
-      <nav className="header_nav">
-        <NavLink exact="true" to="/" className="link">
-          Main
-        </NavLink>
+    <nav className="navbar container">
+      <Link to="#" className="logo">
+        LOGO
+      </Link>
 
-        <NavLink to="/price" className="link">
-          Price
-        </NavLink>
+      <button type="button" className={classname} onClick={handleClick}>
+        <span className="line"></span>
+        <span className="line"></span>
+        <span className="line"></span>
+      </button>
 
-        <NavLink to="/order" className="link">
-          Order
-        </NavLink>
-      </nav>
-    </header>
+      {menuActive ? (
+        <div className="menu">
+          <ul className="list">
+            <li>
+              <NavLink exact="true" to="/" className="link">
+                Головна
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/price" className="link">
+                Алкогольна карта
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/order" className="link">
+                Коктейлі
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      ) : (
+        <></>
+      )}
+    </nav>
   );
 }
