@@ -19,7 +19,7 @@ export default function Navigation() {
   return (
     <nav className="navbar container">
       <Link to="#" className="logo">
-        LOGO
+        For Rest
       </Link>
 
       <button type="button" className={buttonMenu} onClick={handleClick}>
