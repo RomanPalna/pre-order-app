@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getToOrder } from "../../../redux/toOrder/toOrder-action";
+import {
+  getFromOrder,
+  getToOrder,
+} from "../../../redux/toOrder/toOrder-action";
 
 export default function PriceList({ param }) {
-  const [check, setCheck] = useState(false);
+  const [check, setCheck] = useState(true);
 
   const { id, name, liters, price } = param;
 
   const handleCheck = () => {
     setCheck(!check);
-  };
+    console.log(check);
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
     if (check) {
       dispatch(
         getToOrder({
@@ -24,7 +24,17 @@ export default function PriceList({ param }) {
         })
       );
     }
-  }, [check, dispatch, id, liters, name, price]);
+
+    if (!check) {
+      dispatch(getFromOrder(id));
+    }
+  };
+
+  const dispatch = useDispatch();
+
+  // useEffect(() => {
+
+  // }, [check, dispatch, id, liters, name, price]);
 
   return (
     <tr>
