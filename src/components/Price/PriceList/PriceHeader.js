@@ -15,7 +15,7 @@ export default function PriceHeader() {
           <th scope="col">Об'єм</th>
           <th scope="col">Ціна</th>
           <th scope="col" className="price_quantity">
-            Кількість
+            Додати до замовлення
           </th>
         </tr>
       </thead>

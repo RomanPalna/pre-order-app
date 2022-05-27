@@ -1,21 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getToOrder } from "../../../redux/toOrder/toOrder-action";
 
 export default function PriceList({ param }) {
   const [check, setCheck] = useState(false);
+
+  const { id, name, liters, price } = param;
 
   const handleCheck = () => {
     setCheck(!check);
   };
 
-  console.log(check);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (check) {
+      dispatch(
+        getToOrder({
+          id,
+          name,
+          liters,
+          price,
+        })
+      );
+    }
+  }, [check, dispatch, id, liters, name, price]);
 
   return (
     <tr>
       <th scope="row" className="price_name">
-        {param.name}
+        {name}
       </th>
-      <td>{param.liters} л.</td>
-      <td>{param.price} грн.</td>
+      <td>{liters} л.</td>
+      <td>{price} грн.</td>
       <td>
         <label className="price_item--form">
           <input
