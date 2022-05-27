@@ -1,4 +1,4 @@
-export default function PriceHeader({ title }) {
+export default function PriceHeader({ title, text }) {
   return (
     <>
       <caption className="price_dicription">{title}</caption>
@@ -9,7 +9,7 @@ export default function PriceHeader({ title }) {
           <th scope="col">Об'єм</th>
           <th scope="col">Ціна</th>
           <th scope="col" className="price_quantity">
-            Додати до замовлення
+            {text}
           </th>
         </tr>
       </thead>

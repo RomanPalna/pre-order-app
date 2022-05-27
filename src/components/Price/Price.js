@@ -9,6 +9,8 @@ import "./price.css";
 const text =
   "Виберіть позицію зі списка, та позначте для себе, як обрану. Для зручності користуйтеся пошуком.";
 
+const title = "Додати до замовлення";
+
 export default function Price() {
   const [filter, setFilter] = useState("");
 
@@ -31,7 +33,7 @@ export default function Price() {
           <Finder value={filter} finder={handleChangeFinder} />
         </div>
         <table>
-          <PriceHeader title={text} />
+          <PriceHeader title={text} text={title} />
 
           <tbody>
             {showBottle().map((bottle) => (
