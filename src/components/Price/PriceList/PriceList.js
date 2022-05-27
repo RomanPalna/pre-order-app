@@ -1,17 +1,13 @@
 import { useState } from "react";
-import { ReactComponent as AddButton } from "../../../images/add-button.svg";
 
 export default function PriceList({ param }) {
-  const [quantity, setQuantity] = useState("");
+  const [check, setCheck] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setQuantity("");
+  const handleCheck = () => {
+    setCheck(!check);
   };
 
-  const handleChange = (e) => {
-    setQuantity(e.currentTarget.value);
-  };
+  console.log(check);
 
   return (
     <tr>
@@ -21,18 +17,16 @@ export default function PriceList({ param }) {
       <td>{param.liters} л.</td>
       <td>{param.price} грн.</td>
       <td>
-        <form className="price_item--form" onSubmit={handleSubmit}>
+        <label className="price_item--form">
           <input
             className="price_input"
-            name="Quantity"
-            type="number"
-            value={quantity}
-            onChange={handleChange}
+            name="check"
+            type="checkbox"
+            value={check}
+            onChange={handleCheck}
           ></input>
-          <button className="price_item--button" type="submit">
-            <AddButton width="24" height="24" />
-          </button>
-        </form>
+          <span className="checkbox"></span>
+        </label>
       </td>
     </tr>
   );

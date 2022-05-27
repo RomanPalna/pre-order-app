@@ -3,7 +3,7 @@ import list from "../../bottles.json";
 import PriceList from "./PriceList/PriceList";
 import PriceHeader from "./PriceList/PriceHeader";
 import Finder from "./Finder/Finder";
-import Markup from "./Markup/Markup";
+import Container from "../Container/Container";
 import "./price.css";
 
 export default function Price() {
@@ -22,21 +22,22 @@ export default function Price() {
   };
 
   return (
-    <div className="price">
-      <div className="price_settings">
-        <Finder value={filter} finder={handleChangeFinder} />
-        <Markup />
-      </div>
-      <table>
-        <PriceHeader />
+    <Container>
+      <div className="price">
+        <div className="price_settings">
+          <Finder value={filter} finder={handleChangeFinder} />
+        </div>
+        <table>
+          <PriceHeader />
 
-        <tbody>
-          {showBottle().map((bottle) => (
-            <PriceList key={bottle.id} param={bottle} />
-          ))}
-        </tbody>
-      </table>
-    </div>
+          <tbody>
+            {showBottle().map((bottle) => (
+              <PriceList key={bottle.id} param={bottle} />
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Container>
   );
 }
 
