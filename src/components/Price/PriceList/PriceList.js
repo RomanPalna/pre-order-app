@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {
   getFromOrder,
@@ -10,9 +10,10 @@ export default function PriceList({ param }) {
 
   const { id, name, liters, price } = param;
 
+  const dispatch = useDispatch();
+
   const handleCheck = () => {
     setCheck(!check);
-    console.log(check);
 
     if (check) {
       dispatch(
@@ -29,12 +30,6 @@ export default function PriceList({ param }) {
       dispatch(getFromOrder(id));
     }
   };
-
-  const dispatch = useDispatch();
-
-  // useEffect(() => {
-
-  // }, [check, dispatch, id, liters, name, price]);
 
   return (
     <tr>

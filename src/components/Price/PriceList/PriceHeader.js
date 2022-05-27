@@ -1,13 +1,7 @@
-import AddButton from "../../../images/add-button.svg";
-
-export default function PriceHeader() {
+export default function PriceHeader({ title }) {
   return (
     <>
-      <caption className="price_dicription">
-        Виберіть позицію зі списка, введіть кількість та тисніть{" "}
-        <img alt="add button" src={AddButton} width="24" height="24" />
-        <p>Для зручності користуйтеся пошуком.</p>
-      </caption>
+      <caption className="price_dicription">{title}</caption>
 
       <thead>
         <tr>

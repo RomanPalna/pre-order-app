@@ -6,6 +6,9 @@ import Finder from "./Finder/Finder";
 import Container from "../Container/Container";
 import "./price.css";
 
+const text =
+  "Виберіть позицію зі списка, та позначте для себе, як обрану. Для зручності користуйтеся пошуком.";
+
 export default function Price() {
   const [filter, setFilter] = useState("");
 
@@ -28,7 +31,7 @@ export default function Price() {
           <Finder value={filter} finder={handleChangeFinder} />
         </div>
         <table>
-          <PriceHeader />
+          <PriceHeader title={text} />
 
           <tbody>
             {showBottle().map((bottle) => (
